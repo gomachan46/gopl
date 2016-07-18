@@ -10,7 +10,7 @@ import (
 func main() {
 	secs1 := measure(echo1)
 	secs2 := measure(echo2)
-  fmt.Println(fmt.Sprintf("echo1: %.7fs, echo2: %.7fs", secs1, secs2))
+  fmt.Printf("echo1: %.7fs, echo2: %.7fs\n", secs1, secs2)
 }
 
 func measure(f func()) float64 {
