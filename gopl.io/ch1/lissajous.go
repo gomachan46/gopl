@@ -14,8 +14,8 @@ import (
 var palette = []color.Color{color.White, color.Black}
 
 const (
-	whiteIndex = 0
-	blackIndex = 1
+	whiteIndex = 0 // パレットの最初の色
+	blackIndex = 1 // パレットの次の色
 )
 
 func main() {
@@ -24,6 +24,7 @@ func main() {
 }
 
 func lissajous(out io.Writer) {
+  // 図形の設定値
 	const (
 		cycles  = 5
 		res     = 0.001
