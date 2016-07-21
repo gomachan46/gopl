@@ -26,11 +26,11 @@ func main() {
 func lissajous(out io.Writer) {
   // 図形の設定値
 	const (
-		cycles  = 5
-		res     = 0.001
-		size    = 100
-		nframes = 64
-		delay   = 8
+		cycles  = 5 // 発振器xが完了する周回回数
+		res     = 0.001 // 回転の分解能
+		size    = 100 // 画像キャンパスは[-size..+size]の範囲
+		nframes = 64 // アニメーションフレーム数
+		delay   = 8 // 10ms単位でのフレーム間遅延
 	)
 	freq := rand.Float64() * 3.0
 	anim := gif.GIF{LoopCount: nframes}
