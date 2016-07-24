@@ -35,7 +35,7 @@ func lissajous(out io.Writer) {
 	freq := rand.Float64() * 3.0
 	anim := gif.GIF{LoopCount: nframes}
 	phase := 0.0
-	for i := 0; i < nframes; i++ {
+	for i := 0; i < nframes; i++ { // 各フレームごとの処理
 		rect := image.Rect(0, 0, 2*size+1, 2*size+1)
 		img := image.NewPaletted(rect, palette)
 		for t := 0.0; t < cycles*2*math.Pi; t += res {
@@ -49,3 +49,5 @@ func lissajous(out io.Writer) {
 	}
 	gif.EncodeAll(out, &anim) // 注意: エンコードエラーを無視
 }
+
+// コンポジットリテラル: []color.Color{...}とかgif.GIF{...}みたいなやつ。要素の値の並びからGoのコンポジット型のインスタンスを生成するための簡潔な表記
