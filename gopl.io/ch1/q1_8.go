@@ -5,10 +5,17 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"strings"
 )
 
 func main() {
+	const (
+		httpProtocol = "http://"
+	)
 	for _, url := range os.Args[1:] {
+		if strings.HasPrefix(url, httpProtocol) == false {
+			url = httpProtocol + url
+		}
 		resp, err := http.Get(url)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "fetch: %v\n", err)
