@@ -1,0 +1,2 @@
+fetch: Get http://bad.gopl.io: dial tcp: lookup bad.gopl.io: no such host
+exit status 1
