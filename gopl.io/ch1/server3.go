@@ -25,3 +25,5 @@ func handler(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "Form[%q] = %q\n", k, v)
   }
 }
+
+// ifの条件に先立ちローカル変数宣言などの短文を許している
